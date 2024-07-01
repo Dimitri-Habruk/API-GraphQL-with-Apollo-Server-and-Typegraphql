@@ -1,11 +1,25 @@
 {
-  "devDependencies": {
-    "@apollo/server": "^4.10.4",
+  "name": "checkpoint-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node-dev src/index.ts",
+    "fixtures": "ts-node src/fixtures/loadFixtures.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.10.2",
     "reflect-metadata": "^0.2.2",
     "sqlite3": "^5.1.7",
     "ts-node-dev": "^2.0.0",
     "type-graphql": "^2.0.0-beta.6",
-    "typeorm": "^0.3.20",
-    "typescript": "^5.5.2"
+    "typeorm": "^0.3.20"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/node": "^20.14.9"
   }
 }
