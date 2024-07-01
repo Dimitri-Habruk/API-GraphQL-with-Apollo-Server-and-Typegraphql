@@ -2,7 +2,8 @@ import { Country } from "./entity/Country.entity";
 import datasource from "../lib/datasource";
 
 async function addFixtures() {
-  const countryRepository = datasource.getRepository(Country)
+    const connection = await datasource.initialize();
+    const countryRepository = connection.getRepository(Country);
 
   const countries = [
     { code: "FR", name: "France", emoji: "🇫🇷", continent: "Europe" },
@@ -18,7 +19,7 @@ async function addFixtures() {
     await countryRepository.save(newCountry);
   }
 
-  await countryRepository.close();
+  await connection.close();
 }
 
 addFixtures().then(() => {
