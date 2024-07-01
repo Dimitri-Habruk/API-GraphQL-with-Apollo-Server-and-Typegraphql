@@ -1,5 +1,5 @@
-import { Country } from "./entity/Country.entity";
-import datasource from "../lib/datasource";
+import { Country } from "./entities/Country.entity";
+import datasource from "./lib/datasource";
 
 async function addFixtures() {
     const connection = await datasource.initialize();
