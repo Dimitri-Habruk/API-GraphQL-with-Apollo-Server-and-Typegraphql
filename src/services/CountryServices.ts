@@ -31,6 +31,10 @@ class CountryServices {
     return country;
   }
 
+  async findByContinent(continent: string): Promise<Country[]> {
+    return this.db.find({ where: { continent } });
+  }
+
   async update(code: string, data: Partial<Country>) {
     const country = await this.find(code);
     if (!country) {

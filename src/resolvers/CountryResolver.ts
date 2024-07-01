@@ -18,7 +18,7 @@ export class CountryResolver {
 
     @Query(() => [Country])
     async countriesByContinent(@Arg("continent") continent: string) {
-        return await  this.countryService.find(continent);
+        return await this.countryService.findByContinent(continent);
     }
 
     @Mutation(() => Country)
